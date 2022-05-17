@@ -3,7 +3,7 @@ import axios from 'axios';
 import { FaTimes } from 'react-icons/fa';
 import formatDate from '../utils/formatDate';
 
-import { UserBtns } from './UserBtns';
+import { UserBtns } from './layout/UserBtns';
 
 export const ListTodos = () => {
   const [todos, setTodos] = useState([]);
