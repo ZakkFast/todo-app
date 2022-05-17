@@ -12,12 +12,12 @@ router.get('/', async (req, res) => {
   }
 });
 
-// @router   post api/tag
+// @router   POST api/tag
 // @desc     Create Tag
 router.post('/', async (req, res) => {
     try {
       const createTag = await Tag.create(req.body);
-      res.status(200).json(createTag);
+      res.status(201).json(createTag);
     } catch (err) {
       res.status(500).json(err);
     }
