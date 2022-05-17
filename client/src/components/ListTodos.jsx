@@ -3,6 +3,8 @@ import axios from 'axios';
 import { FaTimes } from 'react-icons/fa';
 import formatDate from '../utils/formatDate';
 
+import { UserBtns } from './UserBtns';
+
 export const ListTodos = () => {
   const [todos, setTodos] = useState([]);
   const [sortOrder, setSortOrder] = useState('todo_name');
@@ -41,6 +43,7 @@ export const ListTodos = () => {
 
   return (
     <>
+      <UserBtns sortOrder={sortOrder} setSortOrder={setSortOrder} getTodos={getTodos}/>
       {todos.map((todo) => {
         let array = [];
         for (let i = 0; i < todo.tags.length; i++) {
