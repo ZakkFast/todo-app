@@ -18,7 +18,6 @@ export const ListTodos = () => {
       });
       const payload = response.data;
       setTodos(payload);
-      console.log(todos);
     } catch (err) {
       console.error(err.message);
     }
@@ -31,7 +30,6 @@ export const ListTodos = () => {
       );
 
       setTodos(todos.filter((todo) => todo.id !== id));
-      console.log('deleteTodo');
     } catch (err) {
       console.error(err.message);
     }
