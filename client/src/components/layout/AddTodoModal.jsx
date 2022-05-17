@@ -40,8 +40,8 @@ const AddTodoModal = ({ getTodos }) => {
         due_date,
         tagIds,
       });
-      // refresh page to clear form checkboxes
-      window.location = '/'
+    
+      getTodos()
     } catch (err) {
       console.error(err);
     }

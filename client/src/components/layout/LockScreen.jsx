@@ -14,7 +14,7 @@ export const LockScreen = ({ setLock, lock }) => {
   const checkPassword = async (e) => {
       e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:5000/api/user', {
+      const response = await axios.post('/api/user', {
         user_password: user_password,
       });
 
@@ -34,8 +34,6 @@ export const LockScreen = ({ setLock, lock }) => {
 
   const onChange = (e) => {
     setPasswordInput({ [e.target.name]: e.target.value });
-    console.log(e.target.value, 'e target');
-    console.log(passwordInput, 'pw input');
   };
 
   return (

@@ -37,10 +37,6 @@ export const ListTodos = () => {
     }
   };
 
-  useEffect(() => {
-    getTodos();
-  }, []);
-
   return (
     <>
       <UserBtns sortOrder={sortOrder} setSortOrder={setSortOrder} getTodos={getTodos}/>
