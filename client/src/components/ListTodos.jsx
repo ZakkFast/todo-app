@@ -9,7 +9,7 @@ export const ListTodos = () => {
 
   const getTodos = async () => {
     const headers = {
-        // will change based on which button user selects
+      // will change based on which button user selects
       SORT_BY: sortOrder,
     };
     try {
@@ -18,15 +18,28 @@ export const ListTodos = () => {
       });
       const payload = response.data;
       setTodos(payload);
-      console.log(todos)
+      console.log(todos);
     } catch (err) {
       console.error(err.message);
     }
   };
 
-  useEffect(()=> {
-      getTodos()
-  }, [])
+  const deleteTodo = async (id) => {
+    try {
+      const deleteTodo = await axios.delete(
+        `http://localhost:5000/api/todo/${id}`
+      );
+
+      setTodos(todos.filter((todo) => todo.id !== id));
+      console.log('deleteTodo');
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  useEffect(() => {
+    getTodos();
+  }, []);
 
   return (
     <>
@@ -45,7 +58,7 @@ export const ListTodos = () => {
               <div className="ml-auto">
                 <button
                   className="btn text-danger"
-                //   onClick={() => deleteTodo(todo.id)}
+                  onClick={() => deleteTodo(todo.id)}
                 >
                   <FaTimes />
                 </button>
@@ -57,7 +70,7 @@ export const ListTodos = () => {
             </div>
             <p className="card-text mt-3">
               <span className="font-weight-bold">Date Due:</span>{' '}
-              {formatDate(todo.due_date)}
+              {todo.due_date ? formatDate(todo.due_date) : 'No Due Date'}
             </p>
             <p className="card-text">{todoTags}</p>
           </div>
