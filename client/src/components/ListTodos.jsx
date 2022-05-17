@@ -5,7 +5,7 @@ import formatDate from '../utils/formatDate';
 
 import { UserBtns } from './layout/UserBtns';
 
-export const ListTodos = () => {
+export const ListTodos = ({ setLock }) => {
   const [todos, setTodos] = useState([]);
   const [sortOrder, setSortOrder] = useState('todo_name');
 
@@ -37,13 +37,14 @@ export const ListTodos = () => {
     }
   };
 
-  useEffect(() => {
-    getTodos();
-  }, []);
-
   return (
     <>
-      <UserBtns sortOrder={sortOrder} setSortOrder={setSortOrder} getTodos={getTodos}/>
+      <UserBtns
+        sortOrder={sortOrder}
+        setSortOrder={setSortOrder}
+        getTodos={getTodos}
+        setLock={setLock}
+      />
       {todos.map((todo) => {
         let array = [];
         for (let i = 0; i < todo.tags.length; i++) {
