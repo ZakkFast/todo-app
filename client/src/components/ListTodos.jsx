@@ -5,7 +5,7 @@ import formatDate from '../utils/formatDate';
 
 import { UserBtns } from './layout/UserBtns';
 
-export const ListTodos = () => {
+export const ListTodos = ({ setLock }) => {
   const [todos, setTodos] = useState([]);
   const [sortOrder, setSortOrder] = useState('todo_name');
 
@@ -27,9 +27,7 @@ export const ListTodos = () => {
 
   const deleteTodo = async (id) => {
     try {
-      const deleteTodo = await axios.delete(
-        `/api/todo/${id}`
-      );
+      const deleteTodo = await axios.delete(`/api/todo/${id}`);
 
       setTodos(todos.filter((todo) => todo.id !== id));
     } catch (err) {
@@ -39,7 +37,12 @@ export const ListTodos = () => {
 
   return (
     <>
-      <UserBtns sortOrder={sortOrder} setSortOrder={setSortOrder} getTodos={getTodos}/>
+      <UserBtns
+        sortOrder={sortOrder}
+        setSortOrder={setSortOrder}
+        getTodos={getTodos}
+        setLock={setLock}
+      />
       {todos.map((todo) => {
         let array = [];
         for (let i = 0; i < todo.tags.length; i++) {
