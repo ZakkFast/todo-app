@@ -1,8 +1,12 @@
-import { ListTodos } from "./components/ListTodos";
+import { ListTodos } from './components/ListTodos';
 
 function App() {
   return (
-    <ListTodos />
+    <>
+      <div className="container">
+        <ListTodos />
+      </div>
+    </>
   );
 }
 

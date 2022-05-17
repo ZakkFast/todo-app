@@ -33,8 +33,6 @@ export const ListTodos = () => {
       {todos.map((todo) => {
         let array = [];
         for (let i = 0; i < todo.tags.length; i++) {
-          // find a way to remove the last , in the array
-          // change to map method
           const arrayItem = `${todo.tags[i].tag_name}, `;
           array.push(arrayItem);
         }
@@ -57,7 +55,7 @@ export const ListTodos = () => {
               <p className="font-weight-bold">Description:</p>
               <p className="card-text lead">{todo.description}</p>
             </div>
-            <p className="card-text">
+            <p className="card-text mt-3">
               <span className="font-weight-bold">Date Due:</span>{' '}
               {formatDate(todo.due_date)}
             </p>
