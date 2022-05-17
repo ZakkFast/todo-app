@@ -1,4 +1,4 @@
-# Devvy [![license](https://img.shields.io/badge/license-MIT-blue)](https://shields.io)
+# ToDo [![license](https://img.shields.io/badge/license-MIT-blue)](https://shields.io)
 
 ### Tech Used:
 
