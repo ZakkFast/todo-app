@@ -1,10 +1,12 @@
-
+import { ListTodos } from './components/ListTodos';
 
 function App() {
   return (
-    <div className="App">
-      <h1>React running</h1>
-    </div>
+    <>
+      <div className="container">
+        <ListTodos />
+      </div>
+    </>
   );
 }
 
