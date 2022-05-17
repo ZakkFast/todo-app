@@ -15,7 +15,7 @@ export const ListTodos = () => {
       SORT_BY: sortOrder,
     };
     try {
-      const response = await axios.get('http://localhost:5000/api/todo', {
+      const response = await axios.get('/api/todo', {
         headers,
       });
       const payload = response.data;
@@ -28,7 +28,7 @@ export const ListTodos = () => {
   const deleteTodo = async (id) => {
     try {
       const deleteTodo = await axios.delete(
-        `http://localhost:5000/api/todo/${id}`
+        `/api/todo/${id}`
       );
 
       setTodos(todos.filter((todo) => todo.id !== id));

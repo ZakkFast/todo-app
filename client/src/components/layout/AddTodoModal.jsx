@@ -34,7 +34,7 @@ const AddTodoModal = ({ getTodos }) => {
 
   const submitData = async (e) => {
     try {
-      const newTodo = await axios.post('http://localhost:5000/api/todo', {
+      const newTodo = await axios.post('/api/todo', {
         todo_name,
         description,
         due_date,
