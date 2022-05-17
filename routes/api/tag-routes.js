@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Tag } = require('../../models');
 
+// @router   GET api/tag
+// @desc     Get all tags
 router.get('/', async (req, res) => {
   try {
     const getTags = await Tag.findAll();
@@ -10,6 +12,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+// @router   post api/tag
+// @desc     Create Tag
 router.post('/', async (req, res) => {
     try {
       const createTag = await Tag.create(req.body);
