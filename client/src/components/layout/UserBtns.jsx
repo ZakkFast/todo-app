@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {FaSortAlphaDown, FaSortAmountDown, FaLock} from 'react-icons/fa';
+import AddTodoModal from './AddTodoModal';
 
 export const UserBtns = ({ setSortOrder, sortOrder, getTodos }) => {
     const btnToggle = (e) => {
@@ -15,7 +16,7 @@ export const UserBtns = ({ setSortOrder, sortOrder, getTodos }) => {
     return (
         <div className="d-flex m-3">
         <div className="mr-auto">
-          <button className="btn bt-sm">temp</button>
+          <AddTodoModal getTodos={getTodos}/>
         </div>
         {sortOrder === 'due_date' ? (
           <button className="btn btn-sm mr-2" onClick={(e) => btnToggle()}>
