@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {FaSortAlphaDown, FaSortAmountDown, FaLock} from 'react-icons/fa';
 import AddTodoModal from './AddTodoModal';
 
-export const UserBtns = ({ setSortOrder, sortOrder, getTodos }) => {
+export const UserBtns = ({ setSortOrder, sortOrder, getTodos, setLock }) => {
     const btnToggle = (e) => {
         sortOrder === 'todo_name' ? setSortOrder('due_date') : setSortOrder('todo_name');
         getTodos()
@@ -27,9 +27,9 @@ export const UserBtns = ({ setSortOrder, sortOrder, getTodos }) => {
             <FaSortAmountDown size={20} />
           </button>
         )}
-        <div className='mr-2'>
-          <button className="btn btn-sm btn-danger" onClick={() => console.log('lock')}><FaLock size={20}/></button>
-        </div>
+              <div className='mr-2'>
+        <button className="btn btn-sm btn-danger" onClick={() => setLock(true)}><FaLock size={20}/></button>
+      </div>
       </div>
     )
 }
