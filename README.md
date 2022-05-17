@@ -40,8 +40,9 @@ npm run dev
 ```
 
 ### Deployed Links:
-
+For development and testing purposes please use <i>password</i> to log into the deplyed app.<br>
 [ToDo App](https://todo-app-pern.herokuapp.com/)
+
 
 
 ### Licensing:
